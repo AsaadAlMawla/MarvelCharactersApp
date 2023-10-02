@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_grey">
+
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/character_profile_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        fresco:roundedCornerRadius="6dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:layout_alignStart="@+id/character_profile_image_view"
+        android:layout_alignEnd="@+id/character_profile_image_view"
+        android:layout_alignBottom="@+id/character_profile_image_view"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="4dp"
+        android:background="@color/black_transparent">
+
+        <TextView
+            android:id="@+id/character_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            tools:text="Iron Man" />
+
+        <TextView
+            android:id="@+id/character_id_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            tools:text="900584" />
+
+    </LinearLayout>
+
+</RelativeLayout>

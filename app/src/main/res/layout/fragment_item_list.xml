@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Adding the same root's ID for view binding as other layout configurations -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_list_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey">
+
+    <LinearLayout
+        android:id="@+id/marvel_characters_title_container_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Characters"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Learn about your Marvel Alliance"
+            android:textSize="15dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+
+    <GridView
+        android:id="@+id/marvel_characters_list_view"
+        android:layout_below="@+id/marvel_characters_title_container_view"
+        android:name="com.mawla.marvelcharacterkotlinapp.ItemListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.mawla.marvelcharacterkotlinapp.MarvelCharactersActivity"
+        tools:listitem="@layout/marvel_characters_list_view_item_layout"
+        android:visibility="gone"
+        android:numColumns="2"/>
+
+    <LinearLayout
+        android:layout_below="@+id/marvel_characters_title_container_view"
+        android:id="@+id/failure_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/failure_error_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Failed !" />
+
+        <Button
+            android:id="@+id/retry_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retry" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/circular_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:indeterminate="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading your Marvel Alliance ... "
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
